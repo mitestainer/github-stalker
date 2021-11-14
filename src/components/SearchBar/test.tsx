@@ -11,4 +11,12 @@ describe('<SearchBar />', () => {
 
     expect(screen.getByRole('button', { name: /search/i })).toBeInTheDocument()
   })
+
+  it('should render the searchbar with the logo', () => {
+    render(<SearchBar withLogo />)
+
+    const logo = screen.getByRole('link', { name: '🕵️' })
+    expect(logo).toBeInTheDocument()
+    expect(logo).toHaveAttribute('href', '/')
+  })
 })

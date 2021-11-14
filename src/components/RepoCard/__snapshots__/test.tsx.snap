@@ -122,16 +122,17 @@ exports[
     class="c4"
   >
     <span
+      aria-label="last update"
       class="c5"
     >
       Last update: 
       2021-11-14T14:03:02Z
     </span>
     <span
-      aria-label="stars"
       class="c6"
     >
       <svg
+        aria-label="stars"
         fill="none"
         height="1em"
         stroke="currentColor"

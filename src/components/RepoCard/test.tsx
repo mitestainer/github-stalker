@@ -31,6 +31,12 @@ describe('<RepoCard />', () => {
     expect(container.firstChild).toMatchSnapshot()
   })
 
+  it('should not render the strars label if the repo has no stars', () => {
+    render(<RepoCard {...mockData} stars={0} />)
+
+    expect(screen.queryByLabelText(/stars/i)).not.toBeInTheDocument()
+  })
+
   it('should not render the language label if the repo has no language', () => {
     render(<RepoCard {...mockData} language="" />)
 

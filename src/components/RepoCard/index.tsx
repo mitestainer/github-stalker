@@ -25,11 +25,15 @@ const RepoCard = ({
         <S.Description>{description}</S.Description>
       </S.Content>
       <S.Footer>
-        <S.UpdatedAt>Last update: {updatedAt}</S.UpdatedAt>
-        <S.Star aria-label="stars">
-          <FiStar />
-          {stars}
-        </S.Star>
+        <S.UpdatedAt aria-label="last update">
+          Last update: {updatedAt}
+        </S.UpdatedAt>
+        {!!stars && (
+          <S.Star>
+            <FiStar aria-label="stars" />
+            {stars}
+          </S.Star>
+        )}
         {!!language && <S.Badge aria-label="language">{language}</S.Badge>}
       </S.Footer>
     </S.Wrapper>

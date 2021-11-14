@@ -8,7 +8,7 @@ describe('<Empty />', () => {
 
     expect(screen.getByRole('img', { name: /empty box/i })).toBeInTheDocument()
     expect(
-      screen.getByText('This organization has no repositories.')
+      screen.getByText('This organization has no repositories to show.')
     ).toBeInTheDocument()
   })
 })

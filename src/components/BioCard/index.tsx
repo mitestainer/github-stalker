@@ -5,9 +5,9 @@ import * as S from './styles'
 type BioCardProps = {
   name: string
   avatar: string
-  description: string
-  location: string
-  website: string
+  description?: string
+  location?: string
+  website?: string
 }
 
 const BioCard = ({
@@ -23,18 +23,24 @@ const BioCard = ({
         <Image src={avatar} alt={name} layout="fill" objectFit="cover" />
       </S.Avatar>
       <S.Title>{name}</S.Title>
-      <S.Description>{description}</S.Description>
-      <S.Location>
-        <FiMapPin />
-        {location}
-      </S.Location>
-      <S.Website>
-        <FiGlobe />
-        <a href={website} target="_blank" rel="noreferrer">
-          <span>Website</span>
-          <FiExternalLink />
-        </a>
-      </S.Website>
+      {!!description && (
+        <S.Description aria-label="description">{description}</S.Description>
+      )}
+      {!!location && (
+        <S.Location>
+          <FiMapPin aria-label="location" />
+          {location}
+        </S.Location>
+      )}
+      {!!website && (
+        <S.Website>
+          <FiGlobe aria-label={`${name}'s website`} />
+          <a href={website} target="_blank" rel="noreferrer">
+            <span>Website</span>
+            <FiExternalLink />
+          </a>
+        </S.Website>
+      )}
     </S.Wrapper>
   )
 }

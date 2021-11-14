@@ -12,7 +12,7 @@ const Empty = () => {
           objectFit="cover"
         />
       </S.Wrapper>
-      <S.Text>This organization has no repositories.</S.Text>
+      <S.Text>This organization has no repositories to show.</S.Text>
     </>
   )
 }
