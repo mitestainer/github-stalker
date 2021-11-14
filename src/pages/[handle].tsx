@@ -1,6 +1,5 @@
 import { GetServerSideProps } from 'next'
 import Organization, { OrganizationProps } from 'templates/Organization'
-import axios from 'axios'
 import { fetchRepos } from 'utils/fetchers/helpers'
 
 export default function OrganizationPage(props: OrganizationProps) {
@@ -8,21 +7,24 @@ export default function OrganizationPage(props: OrganizationProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const bioResponse = await axios.get(
+  const bioResponse = await fetch(
     `https://api.github.com/orgs/${params?.handle}`
   )
+  if (bioResponse.status === 404) return { notFound: true }
+
+  const bioData = await bioResponse.json()
 
   const reposResponse = await fetchRepos(params?.handle as string, 1)
 
   return {
     props: {
-      handle: bioResponse.data.login,
-      name: bioResponse.data.name,
-      avatar: bioResponse.data.avatar_url,
-      description: bioResponse.data.description,
-      website: bioResponse.data.blog,
-      location: bioResponse.data.location,
-      reposCount: bioResponse.data.public_repos,
+      handle: bioData.login,
+      name: bioData.name,
+      avatar: bioData.avatar_url,
+      description: bioData.description,
+      website: bioData.blog,
+      location: bioData.location,
+      reposCount: bioData.public_repos,
       repos: reposResponse
     }
   }

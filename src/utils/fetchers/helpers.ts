@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { formatDate } from 'utils/formatters/helpers'
 
 type RepoResponseProps = {
@@ -12,10 +11,12 @@ type RepoResponseProps = {
 }
 
 export const fetchRepos = async (handle: string, page: number) => {
-  const response = await axios.get(
+  const response = await fetch(
     `https://api.github.com/orgs/${handle}/repos?sort=updated&direction=desc&page=${page}&per_page=12`
   )
-  return response.data.map((repo: RepoResponseProps) => ({
+  const data = await response.json()
+
+  return data.map((repo: RepoResponseProps) => ({
     id: repo.id,
     name: repo.full_name,
     description: repo.description,
