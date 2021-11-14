@@ -6,7 +6,8 @@ exports[`<Logo /> should render the Logo correctly 1`] = `
 }
 
 .c1 {
-  font-size: 12rem;
+  position: relative;
+  margin: 0 auto;
 }
 
 .c2 {
@@ -17,15 +18,25 @@ exports[`<Logo /> should render the Logo correctly 1`] = `
   -webkit-text-fill-color: transparent;
 }
 
+@media screen and (max-width:768px) {
+  .c2 {
+    line-height: 1;
+  }
+}
+
 <div
   class="c0"
 >
-  <span
-    aria-label="detective emoji"
+  <div
     class="c1"
   >
-    🕵️
-  </span>
+    <img
+      alt="Github Octocat dressed as a detective"
+      height="350"
+      src="/img/octocat-detective.png"
+      width="350"
+    />
+  </div>
   <h1
     class="c2"
   >

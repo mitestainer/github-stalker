@@ -15,7 +15,7 @@ describe('<SearchBar />', () => {
   it('should render the searchbar with the logo', () => {
     render(<SearchBar withLogo />)
 
-    const logo = screen.getByRole('link', { name: '🕵️' })
+    const logo = screen.getByRole('link', { name: /go to home page/i })
     expect(logo).toBeInTheDocument()
     expect(logo).toHaveAttribute('href', '/')
   })

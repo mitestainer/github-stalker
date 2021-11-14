@@ -1,5 +1,6 @@
 import { FormEvent, useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import Button from 'components/Button'
 import { FiSearch } from 'react-icons/fi'
@@ -26,7 +27,14 @@ const SearchBar = ({ withLogo = false }: SearchBarProps) => {
     <S.Wrapper withLogo={withLogo}>
       {withLogo && (
         <Link href="/">
-          <a>🕵️</a>
+          <a>
+            <Image
+              src="/img/octocat-detective.png"
+              alt="Go to home page"
+              height={42}
+              width={42}
+            />
+          </a>
         </Link>
       )}
       <form onSubmit={handleSubmit}>

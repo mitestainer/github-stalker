@@ -4,8 +4,9 @@ export const Wrapper = styled.div`
   text-align: center;
 `
 
-export const Emoji = styled.span`
-  font-size: 12rem;
+export const ImageWrapper = styled.div`
+  position: relative;
+  margin: 0 auto;
 `
 
 export const Title = styled.h1`
@@ -20,5 +21,9 @@ export const Title = styled.h1`
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media screen and (max-width: 768px) {
+      line-height: 1;
+    }
   `}
 `

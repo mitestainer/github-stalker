@@ -6,7 +6,9 @@ describe('<Logo />', () => {
   it('should render the Logo correctly', () => {
     const { container } = render(<Logo />)
 
-    expect(screen.getByLabelText('detective emoji')).toBeInTheDocument()
+    expect(
+      screen.getByRole('img', { name: 'Github Octocat dressed as a detective' })
+    ).toBeInTheDocument()
 
     const title = screen.getByRole('heading', { name: /github stalker/i })
     expect(title).toBeInTheDocument()
