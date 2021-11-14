@@ -101,6 +101,7 @@ exports[
 
 <a
   class="c0"
+  data-cy="repo-card"
   href="https://github.com/facebook/react"
   target="_blank"
 >

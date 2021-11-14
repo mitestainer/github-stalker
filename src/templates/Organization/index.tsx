@@ -65,7 +65,7 @@ const OrganizationTemplate = ({
           />
           <S.Repositories>
             <h2>Repositories ({reposCount})</h2>
-            <S.Grid empty={!reposCount}>
+            <S.Grid empty={!reposCount} data-cy="grid">
               {reposCount > 0 ? (
                 reposList.map((card: ReposProps) => (
                   <RepoCard key={card.id} {...card} />

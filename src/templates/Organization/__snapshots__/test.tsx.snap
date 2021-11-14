@@ -141,6 +141,7 @@ exports[`<Organization /> should render the organization page 1`] = `
         </h2>
         <div
           class="c5"
+          data-cy="grid"
         >
           <div
             data-testid="Mock RepoCard"

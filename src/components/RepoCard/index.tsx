@@ -19,7 +19,7 @@ const RepoCard = ({
   updatedAt
 }: RepoCardProps) => {
   return (
-    <S.Wrapper href={url} target="_blank">
+    <S.Wrapper href={url} target="_blank" data-cy="repo-card">
       <S.Content>
         <S.Title>{name}</S.Title>
         <S.Description>{description}</S.Description>
