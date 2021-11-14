@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Logo /> should render the Logo correctly 1`] = `
+.c0 {
+  text-align: center;
+}
+
+.c1 {
+  font-size: 12rem;
+}
+
+.c2 {
+  font-family: 'Indie Flower',cursive;
+  font-size: 8rem;
+  background: -webkit-linear-gradient( 90deg,rgba(95,73,202,1) 0%,rgba(147,135,225,1) 85%,rgba(173,165,225,1) 100% );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+<div
+  class="c0"
+>
+  <span
+    aria-label="detective emoji"
+    class="c1"
+  >
+    🕵️
+  </span>
+  <h1
+    class="c2"
+  >
+    Github stalker
+  </h1>
+</div>
+`

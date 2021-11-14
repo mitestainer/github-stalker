@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[
+  `<RepoCard /> should render the RepoCard component and its content 1`
+] = `
+.c0 {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 2rem;
+  border: 1px solid #dadae5;
+}
+
+.c1 {
+  text-align: left;
+}
+
+.c2 {
+  font-weight: 600;
+  color: #8383a6;
+  margin-bottom: 10px;
+}
+
+.c3 {
+  font-size: 1.4rem;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-size: 1.2rem;
+  -webkit-column-gap: 1rem;
+  column-gap: 1rem;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #8383a6;
+}
+
+.c5 > svg {
+  fill: #dadae5;
+  color: #8383a6;
+  margin-right: 0.3rem;
+}
+
+.c6 {
+  background-color: #9387e1;
+  padding: 5px 10px;
+  border-radius: 1rem;
+  border: 1px solid #5f49ca;
+  color: #5f49ca;
+}
+
+<a
+  class="c0"
+  href="https://github.com/facebook/react"
+  target="_blank"
+>
+  <div
+    class="c1"
+  >
+    <p
+      class="c2"
+    >
+      React
+    </p>
+    <p
+      class="c3"
+    >
+      The repository for React
+    </p>
+  </div>
+  <div
+    class="c4"
+  >
+    <span
+      class="c5"
+    >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polygon
+          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+        />
+      </svg>
+      1234
+    </span>
+    <span
+      class="c6"
+    >
+      JavaScript
+    </span>
+  </div>
+</a>
+`
