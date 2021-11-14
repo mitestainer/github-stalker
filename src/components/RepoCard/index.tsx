@@ -2,28 +2,35 @@ import { FiStar } from 'react-icons/fi'
 import * as S from './styles'
 
 export type RepoCardProps = {
-  data: {
-    name: string
-    description: string
-    stars: number
-    tech: string
-    url: string
-  }
+  name: string
+  description: string
+  stars: number
+  language?: string
+  url: string
+  updatedAt: string
 }
 
-const RepoCard = ({ data }: RepoCardProps) => {
+const RepoCard = ({
+  name,
+  description,
+  stars,
+  language,
+  url,
+  updatedAt
+}: RepoCardProps) => {
   return (
-    <S.Wrapper href={data.url} target="_blank">
+    <S.Wrapper href={url} target="_blank">
       <S.Content>
-        <S.Title>{data.name}</S.Title>
-        <S.Description>{data.description}</S.Description>
+        <S.Title>{name}</S.Title>
+        <S.Description>{description}</S.Description>
       </S.Content>
       <S.Footer>
-        <S.Star>
+        <S.UpdatedAt>Last update: {updatedAt}</S.UpdatedAt>
+        <S.Star aria-label="stars">
           <FiStar />
-          {data.stars}
+          {stars}
         </S.Star>
-        <S.Badge>{data.tech}</S.Badge>
+        {!!language && <S.Badge aria-label="language">{language}</S.Badge>}
       </S.Footer>
     </S.Wrapper>
   )

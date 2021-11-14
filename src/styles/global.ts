@@ -18,11 +18,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html, body, #__next {
-    height: 100%;
-
-    @media screen and (max-width: 768px) {
-      height: auto;
-    }
+    min-height: 100vh;
   }
 
   #__next {

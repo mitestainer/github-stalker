@@ -8,10 +8,12 @@ export default {
     gray: '#8383a6',
     lightgray: '#dadae5',
     purple: '#9387e1',
-    darkPurple: '#5f49ca'
+    darkPurple: '#5f49ca',
+    black: '#000'
   },
   font: {
     size: {
+      xxsmall: '1rem',
       xsmall: '1.2rem',
       small: '1.4rem',
       medium: '1.6rem',

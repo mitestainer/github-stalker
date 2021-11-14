@@ -18,10 +18,16 @@ exports[
   row-gap: 1rem;
   padding: 2rem;
   border: 1px solid #dadae5;
+  height: 17rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c1 {
   text-align: left;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
 }
 
 .c2 {
@@ -32,6 +38,13 @@ exports[
 
 .c3 {
   font-size: 1.4rem;
+  color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .c4 {
@@ -53,6 +66,14 @@ exports[
 }
 
 .c5 {
+  font-size: 1rem;
+  color: #8383a6;
+  -webkit-flex: 1 0;
+  -ms-flex: 1 0;
+  flex: 1 0;
+}
+
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -64,13 +85,13 @@ exports[
   color: #8383a6;
 }
 
-.c5 > svg {
+.c6 > svg {
   fill: #dadae5;
   color: #8383a6;
   margin-right: 0.3rem;
 }
 
-.c6 {
+.c7 {
   background-color: #9387e1;
   padding: 5px 10px;
   border-radius: 1rem;
@@ -103,6 +124,13 @@ exports[
     <span
       class="c5"
     >
+      Last update: 
+      2021-11-14T14:03:02Z
+    </span>
+    <span
+      aria-label="stars"
+      class="c6"
+    >
       <svg
         fill="none"
         height="1em"
@@ -121,7 +149,8 @@ exports[
       1234
     </span>
     <span
-      class="c6"
+      aria-label="language"
+      class="c7"
     >
       JavaScript
     </span>

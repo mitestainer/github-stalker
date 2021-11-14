@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import BioCard from 'components/BioCard'
 import Button from 'components/Button'
@@ -6,26 +6,50 @@ import Empty from 'components/Empty'
 import RepoCard, { RepoCardProps } from 'components/RepoCard'
 import SearchBar from 'components/SearchBar'
 import * as S from './styles'
+import { fetchRepos } from '../../utils/fetchers/helpers'
 
-type cardsMockProps = {
-  data: {
-    id: number
-  }
+type ReposProps = {
+  id: number
 } & RepoCardProps
 
 export type OrganizationProps = {
-  data: {
-    name: string
-    description: string
-    avatar: string
-    location: string
-    website: string
-    cardsMock?: cardsMockProps[]
-  }
+  handle: string
+  name: string
+  description: string
+  avatar: string
+  location: string
+  website: string
+  reposCount: number
+  repos: ReposProps[]
 }
 
-const OrganizationTemplate = ({ data }: OrganizationProps) => {
+const OrganizationTemplate = ({
+  handle,
+  name,
+  description,
+  avatar,
+  location,
+  website,
+  reposCount,
+  repos
+}: OrganizationProps) => {
   const [loading, setLoading] = useState(false)
+  const [reposList, setReposList] = useState<ReposProps[]>([])
+  const [nextPageIndex, setNextPageIndex] = useState(1)
+
+  useEffect(() => {
+    setReposList(repos)
+  }, [repos])
+
+  const pagesAmount = Math.ceil(reposCount / 12)
+
+  const handleShowMore = async () => {
+    setLoading(true)
+    setNextPageIndex(reposList.length / 12 + 1)
+    const newRepos = await fetchRepos(handle, nextPageIndex)
+    setReposList([...reposList, ...newRepos])
+    setLoading(false)
+  }
 
   return (
     <S.Container>
@@ -33,32 +57,32 @@ const OrganizationTemplate = ({ data }: OrganizationProps) => {
         <SearchBar withLogo />
         <S.Section>
           <BioCard
-            name={data.name}
-            description={data.description}
-            avatar={data.avatar}
-            location={data.location}
-            website={data.website}
+            name={name}
+            description={description}
+            avatar={avatar}
+            location={location}
+            website={website}
           />
           <S.Repositories>
-            <h2>Repositories ({data.cardsMock!.length})</h2>
-            <S.Grid empty={!data.cardsMock!.length}>
-              {data.cardsMock!.length > 0 ? (
-                data.cardsMock!.map((card: cardsMockProps) => (
-                  <RepoCard key={card.data.id} {...card} />
+            <h2>Repositories ({reposCount})</h2>
+            <S.Grid empty={!reposCount}>
+              {reposCount > 0 ? (
+                reposList.map((card: ReposProps) => (
+                  <RepoCard key={card.id} {...card} />
                 ))
               ) : (
                 <Empty />
               )}
             </S.Grid>
-            {data.cardsMock!.length > 0 && (
-              <Button disabled={loading} onClick={() => setLoading(!loading)}>
+            {reposCount > 0 && nextPageIndex < pagesAmount ? (
+              <Button disabled={loading} onClick={handleShowMore}>
                 {loading ? (
                   <Image src="/img/loading.svg" height={20} width={20} />
                 ) : (
                   'Load more'
                 )}
               </Button>
-            )}
+            ) : null}
           </S.Repositories>
         </S.Section>
       </S.Wrapper>
