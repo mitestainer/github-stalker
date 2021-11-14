@@ -45,8 +45,9 @@ const OrganizationTemplate = ({
 
   const handleShowMore = async () => {
     setLoading(true)
-    setNextPageIndex(reposList.length / 12 + 1)
-    const newRepos = await fetchRepos(handle, nextPageIndex)
+    const newPageIndex = reposList.length / 12 + 1
+    const newRepos = await fetchRepos(handle, newPageIndex)
+    setNextPageIndex(newPageIndex)
     setReposList([...reposList, ...newRepos])
     setLoading(false)
   }

@@ -10,6 +10,7 @@ describe('Regular Flow', () => {
     })
 
     cy.findByRole('button', {name: /load more/i}).click()
+    cy.wait(1000)
 
     cy.get(`[data-cy="grid"]`).within(() => {
       cy.get(`[data-cy="repo-card"]`).should('have.length', 24)
