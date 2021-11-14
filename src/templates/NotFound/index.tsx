@@ -9,7 +9,12 @@ const NotFound = () => {
       <Container>
         <S.Wrapper>
           <S.Title>It happens in the best of families...</S.Title>
-          <Image src="/img/404.svg" height={200} width={200} />
+          <Image
+            src="/img/404.svg"
+            alt="404 - Not found"
+            height={200}
+            width={200}
+          />
           <p>
             {`Seems this organization doesn't exist! Try searching for another one:`}
           </p>

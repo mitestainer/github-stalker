@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFound /> should render the 404 picture and the search bar 1`] = `
+.c3 {
+  max-width: 120rem;
+  margin: 0 auto;
+  background-color: #eff1fa;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.c1 {
+  max-width: 75rem;
+  width: 100%;
+}
+
+.c1 .c2 {
+  width: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  row-gap: 2rem;
+  background-color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.c5 {
+  color: #5f49ca;
+}
+
+@media screen and (max-width:768px) {
+  .c3 {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .c0 .c2 {
+    margin: auto 2rem;
+  }
+}
+
+<main
+  class="c0 c1"
+>
+  <div
+    class="c2 c3"
+  >
+    <div
+      class="c4"
+    >
+      <h1
+        class="c5"
+      >
+        It happens in the best of families...
+      </h1>
+      <img
+        alt="404 - Not found"
+        height="200"
+        src="/img/404.svg"
+        width="200"
+      />
+      <p>
+        Seems this organization doesn't exist! Try searching for another one:
+      </p>
+      <div
+        data-testid="Mock SearchBar"
+      />
+    </div>
+  </div>
+</main>
+`
