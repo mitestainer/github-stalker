@@ -48,6 +48,12 @@ yarn dev
 npm run dev
 ```
 
+## Comandos úteis
+
+- `yarn test` para rodar todos os testes
+- `yarn test:watch` para rodar e seguir escutando os testes nos componentes
+- `yarn test:e2e` para rodar os testes de integração no browser
+
 ## Decisões durante a concepção
 
 ### Dependências
